@@ -1,7 +1,7 @@
 data_dir: data/dbase
 do_sample: true
 embeddings_model: all-MiniLM-L6-v2
-hf_api_key: ${nfrGAHsVEjBdqzANCjBSSoyPydgBZKNmZy}
+hf_api_key: ${}
 llm_model: meta-llama/Llama-3.1-8B-Instruct
 max_tokens: 500
 nlp_model: en_core_web_trf
