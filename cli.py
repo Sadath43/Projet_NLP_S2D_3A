@@ -106,7 +106,87 @@ def upload_pdf():
 # Interface principale avec onglets
 tab1, tab2, tab3, tab4 = st.tabs(["État du système", "Gestion des documents", "Génération de réponses", "Configuration"])
 
+# Onglet 1: État du système
+with tab1:
+    st.header("État du système RAG")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.subheader("Informations générales")
+        status_df = pd.DataFrame({
+            "Métrique": [
+                "Vectorstore initialisé",
+                "Documents traités",
+                "Chunks créés",
+                "Dernière mise à jour"
+            ],
+            "Valeur": [
+                "✅ Oui" if st.session_state.system_status["vectorstore_initialized"] else "❌ Non",
+                st.session_state.system_status["documents_processed"],
+                st.session_state.system_status["chunks_created"],
+                st.session_state.system_status["last_update"] or "Jamais"
+            ]
+        })
+        st.table(status_df)
+        
+        if st.button("Rafraîchir l'état du système", key="refresh_status"):
+            update_vectorstore()
+    
+    with col2:
+        st.subheader("Visualisation")
+        if st.session_state.system_status["vectorstore_initialized"]:
+            # Graphique simple pour visualiser les données
+            if isinstance(st.session_state.system_status["chunks_created"], int):
+                fig = px.pie(
+                    names=["Documents", "Chunks"],
+                    values=[
+                        st.session_state.system_status["documents_processed"],
+                        st.session_state.system_status["chunks_created"]
+                    ],
+                    title="Ratio Documents/Chunks"
+                )
+                st.plotly_chart(fig)
+            else:
+                st.info("Visualisation non disponible - Informations sur les chunks manquantes")
+        else:
+            st.info("Aucune donnée à visualiser. Veuillez initialiser le vectorstore.")
 
+# Onglet 2: Gestion des documents
+with tab2:
+    st.header("Gestion des documents")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.subheader("Télécharger des documents")
+        if upload_pdf():
+            st.info("Veuillez mettre à jour le vectorstore pour intégrer le nouveau document.")
+    
+    with col2:
+        st.subheader("Documents existants")
+        
+        # Liste des documents dans le répertoire
+        files = [f for f in os.listdir(st.session_state.rag_system.local_data_dir) if f.endswith(".pdf")]
+        
+        if files:
+            file_df = pd.DataFrame({
+                "Nom du fichier": files,
+                "Taille (ko)": [
+                    round(os.path.getsize(os.path.join(st.session_state.rag_system.local_data_dir, f)) / 1024, 2)
+                    for f in files
+                ]
+            })
+            st.dataframe(file_df)
+        else:
+            st.info("Aucun document PDF trouvé dans le répertoire de données.")
+    
+    st.subheader("Actions")
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        if st.button("Mettre à jour le vectorstore", key="update_vectorstore"):
+            update_vectorstore()
 
 # Onglet 3: Génération de réponses
 with tab3:
