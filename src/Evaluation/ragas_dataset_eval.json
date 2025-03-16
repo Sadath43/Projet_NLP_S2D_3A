@@ -1,0 +1,32 @@
+[
+    {
+        "question": "Quelles sont les causes principales de la crise financière de 2008 ?",
+        "ground_truth": "La crise de 2008 a été causée par la titrisation excessive des prêts subprimes, la dérégulation financière, et la spéculation sur les marchés.",
+        "retrieved_passage": "La crise actuelle est la nième crise parmi celles qu’on a connues dans le système de Bretton Woods [...] prônant la libéralisation financière, les banques et les entreprises financières ont sans cesse poussé la limite de leur exercice.",
+        "answer": "Il n'est pas possible de déterminer les causes principales de la crise financière de 2008 à partir du contexte fourni."
+    },
+    {
+        "question": "Quels sont les principaux types de cellules de l'immunité ?",
+        "ground_truth": "Les principales cellules de l'immunité sont : les cellules souches hématopoïétiques, les granulocytes (neutrophiles, éosinophiles, basophiles), les mastocytes, les cellules dendritiques, les monocytes/macrophages, les lymphocytes T et B, et les cellules NK.",
+        "retrieved_passage": "1- Cellules souches : les cellules souches hématopoïétiques sont localisées au niveau de la moelle osseuse [...] 3-2- Lignée lymphoïde : les cellules NK, les lymphocytes T et B jouent un rôle crucial dans l'immunité.",
+        "answer": "Les principaux types de cellules de l'immunité comprennent les cellules T et les cellules B."
+    },
+    {
+        "question": "Quel est le rôle des lymphocytes T dans l'immunité ?",
+        "ground_truth": "Les lymphocytes T CD4 activent les autres cellules immunitaires, tandis que les lymphocytes T CD8 éliminent les cellules infectées.",
+        "retrieved_passage": "Les lymphocytes T sont une population de cellules âgées non renouvelées, qui représentent environ 70% des lymphocytes [...] Les lymphocytes T CD8 sont impliqués dans la cytotoxicité et l'élimination des cellules infectées.",
+        "answer": "Les lymphocytes T jouent un rôle important dans l'immunité en participant à la production d'Ac, ce qui implique qu'ils participent à la défense du corps contre les intrus (par exemple des virus ou des bactéries). Ils peuvent être activés par des molécules appelées super antigènes qui provoquent une forte réaction immunitaire."
+    },
+    {
+        "question": "Quels sont les effets de la crise financière sur l'économie mondiale ?",
+        "ground_truth": "La crise financière a entraîné une baisse des crédits, une chute des marchés boursiers, et une récession économique mondiale.",
+        "retrieved_passage": "Lorsque le prix immobilier s’effondre, le marché de ces titres et par ricochet celui de leurs dérivés n’existent plus. [...] Les pertes évaluées au prix de marché pour l’ensemble de ces banques pourraient avoir atteint 2 800 milliards de dollars américains.",
+        "answer": "Les effets de la crise financière sur l'économie mondiale peuvent être négatifs graves en raison de l'éclatement simultanée de plusieurs bulles importantes des prix d'actifs et des matières premières."
+    },
+    {
+        "question": "Quel est le rôle des macrophages dans l'immunité ?",
+        "ground_truth": "Les macrophages phagocytent les agents pathogènes et présentent des antigènes aux lymphocytes pour activer la réponse immunitaire.",
+        "retrieved_passage": "3-1-4 Monocytes et macrophages : les monocytes sont des cellules circulantes qui se différencient en macrophages matures au niveau des tissus.",
+        "answer": "Les macrophages jouent un rôle important en stimulant les macrophages et en empêchant la dispersion de l'Antigène (Ag)."
+    }
+]
