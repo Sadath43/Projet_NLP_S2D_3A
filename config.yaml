@@ -1,0 +1,10 @@
+data_dir: data/droit_Marocain
+do_sample: true
+embeddings_model: all-MiniLM-L6-v2
+hf_api_key: ${}
+llm_model: mistralai/Mistral-7B-Instruct-v0.3
+max_tokens: 500
+nlp_model: en_core_web_trf
+repetition_penalty: 1.1
+similarity_threshold: 0.6
+temperature: 0.45
