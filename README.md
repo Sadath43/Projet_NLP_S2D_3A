@@ -1,1 +1,4 @@
-# Projet_NLP_S2D_3A
+# Comment effectuer les installations de base :
+
+
+
